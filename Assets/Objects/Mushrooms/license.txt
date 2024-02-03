@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lowpoly Mushrooms
+* source:	https://sketchfab.com/3d-models/lowpoly-mushrooms-2b263d3352be4ad597168864e0634d1b
+* author:	Janosch (https://sketchfab.com/JanoschABR)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lowpoly Mushrooms" (https://sketchfab.com/3d-models/lowpoly-mushrooms-2b263d3352be4ad597168864e0634d1b) by Janosch (https://sketchfab.com/JanoschABR) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

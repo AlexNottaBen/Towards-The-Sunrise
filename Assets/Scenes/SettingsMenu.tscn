@@ -1,0 +1,198 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Scripts/SettingsMenu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/GUI/button.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/OpenSans/OpenSans-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Fonts/SquadaOne/SquadaOne-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 34
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 3 )
+
+[node name="SettingsMenu" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -683.0
+margin_top = -384.0
+margin_right = 683.0
+margin_bottom = 384.0
+script = ExtResource( 1 )
+
+[node name="Wrapper" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 7.0
+margin_bottom = 1.0
+
+[node name="WindowDialog" type="ColorRect" parent="."]
+anchor_left = 0.51
+anchor_top = 0.527
+anchor_right = 0.51
+anchor_bottom = 0.527
+margin_left = -474.66
+margin_top = -278.736
+margin_right = 161.34
+margin_bottom = 57.2639
+rect_scale = Vector2( 1.5, 1.5 )
+theme = SubResource( 4 )
+color = Color( 0.25098, 0.533333, 0.694118, 1 )
+
+[node name="GameplayLabel" type="Label" parent="WindowDialog"]
+margin_left = 256.5
+margin_top = 27.5
+margin_right = 546.5
+margin_bottom = 66.5
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Gameplay"
+align = 1
+
+[node name="RadiusSpawnAmountLabel" type="Label" parent="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -98.5
+margin_top = -91.5
+margin_right = 213.5
+margin_bottom = -52.5
+hint_tooltip = "The radius within which new obstacles and other objects, such as bonuses, will appear."
+mouse_filter = 1
+size_flags_stretch_ratio = 0.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Radius Spawn Amount"
+align = 1
+
+[node name="RadiusSpawnAmountInput" type="TextEdit" parent="WindowDialog/RadiusSpawnAmountLabel"]
+margin_left = 330.0
+margin_top = -0.5
+margin_right = 397.0
+margin_bottom = 39.5
+hint_tooltip = "The radius within which new obstacles and other objects, such as bonuses, will appear."
+custom_fonts/font = SubResource( 5 )
+text = "0"
+
+[node name="ObjectsSpawnQuantityLabel" type="Label" parent="WindowDialog"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -97.5
+margin_top = -32.5
+margin_right = 214.5
+margin_bottom = 6.5
+hint_tooltip = "The number of objects, such as obstacles or bonuses, that will appear at the same time.
+(WARNING: Do not enter too large a value, otherwise the game will not work correctly!)"
+mouse_filter = 1
+size_flags_stretch_ratio = 0.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Objects Spawn Quantity"
+align = 1
+
+[node name="ObjectsSpawnQuantitInput" type="TextEdit" parent="WindowDialog/ObjectsSpawnQuantityLabel"]
+anchor_left = 1.165
+anchor_top = 0.5
+anchor_right = 1.165
+anchor_bottom = 0.5
+margin_left = -33.48
+margin_top = -22.5
+margin_right = 33.52
+margin_bottom = 17.5
+hint_tooltip = "The number of objects, such as obstacles or bonuses, that will appear at the same time.
+(WARNING: Do not enter too large a value, otherwise the game will not work correctly!)"
+custom_fonts/font = SubResource( 5 )
+text = "0"
+
+[node name="ApplyButton" type="TextureButton" parent="WindowDialog"]
+anchor_left = 0.17
+anchor_top = 0.825
+anchor_right = 0.17
+anchor_bottom = 0.825
+margin_left = -78.79
+margin_top = -5.22501
+margin_right = 85.21
+margin_bottom = 45.775
+texture_normal = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="WindowDialog/ApplyButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -59.5
+margin_top = -19.5
+margin_right = 59.5
+margin_bottom = 19.5
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Apply"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowDialog"]
+margin_left = 4.0
+margin_top = 1.0
+margin_right = 206.0
+margin_bottom = 204.0
+rect_pivot_offset = Vector2( -243.5, 40.5 )
+alignment = 1
+
+[node name="SettingsLabel" type="Label" parent="WindowDialog/VBoxContainer"]
+margin_top = 32.0
+margin_right = 202.0
+margin_bottom = 69.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Settings"
+align = 1
+
+[node name="MusicCheckButton" type="CheckButton" parent="WindowDialog/VBoxContainer"]
+margin_top = 73.0
+margin_right = 202.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 3 )
+pressed = true
+text = "Music"
+
+[node name="SoundsCheckButton" type="CheckButton" parent="WindowDialog/VBoxContainer"]
+margin_top = 124.0
+margin_right = 202.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 3 )
+pressed = true
+text = "Sounds"
+
+[node name="HintText" type="Label" parent="WindowDialog"]
+margin_left = 14.0
+margin_top = 214.5
+margin_right = 608.0
+margin_bottom = 253.5
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 6 )
+text = "⚠  The Gameplay settings will be used in the next game session."
+
+[connection signal="text_changed" from="WindowDialog/RadiusSpawnAmountLabel/RadiusSpawnAmountInput" to="." method="_on_RadiusSpawnAmountInput_text_changed"]
+[connection signal="text_changed" from="WindowDialog/ObjectsSpawnQuantityLabel/ObjectsSpawnQuantitInput" to="." method="_on_ObjectsSpawnQuantitInput_text_changed"]
+[connection signal="pressed" from="WindowDialog/ApplyButton" to="." method="_on_ApplyButton_pressed"]
+[connection signal="toggled" from="WindowDialog/VBoxContainer/MusicCheckButton" to="." method="_on_MusicCheckButton_toggled"]
+[connection signal="toggled" from="WindowDialog/VBoxContainer/SoundsCheckButton" to="." method="_on_SoundsCheckButton_toggled"]

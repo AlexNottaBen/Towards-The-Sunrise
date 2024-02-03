@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scripts/Structure1.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/Friendly.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scenes/MoveblePlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Bonus1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/Bonus2.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Structure1" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="Model" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.953433, -0.301605, 0, 0.301605, 0.953433, 0, -5.59499, -8.44413 )
+use_collision = true
+width = 18.6253
+height = 36.6798
+depth = 83.4801
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -49.7999, 0 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Bonus" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2278, -303.54 )
+
+[node name="Bonus2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2278, -354.781 )
+
+[node name="Bonus3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.2278, -405.675 )
+
+[node name="JumpBonus" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.3931, -43.2062 )
+
+[node name="MoveblePlatform" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -295.25 )
+
+[node name="MoveblePlatform2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -354.064 )
+
+[node name="MoveblePlatform3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -412.284 )

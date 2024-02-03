@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Scripts/Brokren Glider.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scenes/GliderModel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scenes/Fire.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 0.640923, 1.45691 )
+
+[node name="Brokren Glider" type="RigidBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.491808, 0, 0, 0, 1, 0, 0, -0.838333 )
+shape = SubResource( 1 )
+
+[node name="Model" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.002, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
+
+[node name="Fire" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, -0.4 )

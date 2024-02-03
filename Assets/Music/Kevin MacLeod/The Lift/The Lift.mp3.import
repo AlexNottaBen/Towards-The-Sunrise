@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The Lift.mp3-cf6b40c6b9d4aeced7434a5d92e6d305.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Kevin MacLeod/The Lift/The Lift.mp3"
+dest_files=[ "res://.import/The Lift.mp3-cf6b40c6b9d4aeced7434a5d92e6d305.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

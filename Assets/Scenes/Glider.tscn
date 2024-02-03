@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Scenes/GliderModel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scripts/Glider.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sounds/crash.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Scenes/ReactiveFire.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Roll"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Model:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -360 ) ]
+}
+
+[node name="Glider" type="KinematicBody"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16076, -0.577124 )
+shape = SubResource( 1 )
+
+[node name="Model" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.002, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0 )
+
+[node name="BlueFire" parent="Model" instance=ExtResource( 4 )]
+transform = Transform( 125, 0, 0, 0, -2.18557e-06, -50, 0, 50, -2.18557e-06, 0, 20.1708, 117.383 )
+
+[node name="SpotLight" type="SpotLight" parent="Model"]
+transform = Transform( 499.98, -4.41562, 0, 1.76625, 199.992, 0, 0, 0, 200, 1.12777e-07, -1.62982, 46.2108 )
+spot_range = 50.0
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16076, -1.52268 )
+shape = SubResource( 1 )
+
+[node name="CrashSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="JumpTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/Roll = SubResource( 3 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_JumpTimer_timeout"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_RestartTimer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

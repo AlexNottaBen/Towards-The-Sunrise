@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scenes/Object5.tscn" type="PackedScene" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Structure3" type="KinematicBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Objects" type="Spatial" parent="."]
+
+[node name="Object" parent="Objects" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 0, 0 )
+
+[node name="Object2" parent="Objects" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0, 0 )
+
+[node name="Object3" parent="Objects" instance=ExtResource( 2 )]
+
+[node name="Object4" parent="Objects" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40, 0, 0 )
+
+[node name="Object5" parent="Objects" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -80, 0, 0 )

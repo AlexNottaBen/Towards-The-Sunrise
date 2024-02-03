@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Scenes/Glider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Scripts/Background.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scenes/Control.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scripts/InGame.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Music/Kevin MacLeod/The Lift/The Lift.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Scenes/Spawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scripts/Directive.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scenes/InGameMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Scenes/SettingsMenu.tscn" type="PackedScene" id=10]
+
+[sub_resource type="SphereShape" id=4]
+
+[sub_resource type="SpatialMaterial" id=3]
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_color = Color( 0.976471, 0.976471, 0.976471, 1 )
+ambient_light_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+glow_enabled = true
+glow_intensity = 0.4
+glow_strength = 0.5
+glow_blend_mode = 0
+
+[node name="InGame" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="Directive" type="KinematicBody" parent="."]
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Directive"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="ObjectSpawner" parent="Directive" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -384.282 )
+
+[node name="Background" parent="Directive" instance=ExtResource( 2 )]
+transform = Transform( -2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 0, 1.2, -16 )
+script = ExtResource( 3 )
+
+[node name="Plane" type="CSGBox" parent="Directive"]
+transform = Transform( 1000, 0, 0, 0, 0.1, 0, 0, 0, 300, 0, 0, 0 )
+use_collision = true
+material = SubResource( 3 )
+
+[node name="Glider" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 86 )
+
+[node name="Camera" type="Camera" parent="Glider"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5593, 4.72928 )
+current = true
+far = 2700.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Plane" type="CSGBox" parent="."]
+transform = Transform( 1000, 0, 0, 0, 0.1, 0, 0, 0, 300, 0, 0, 0 )
+use_collision = true
+material = SubResource( 3 )
+
+[node name="Control" parent="." instance=ExtResource( 4 )]
+
+[node name="InGameMenu" parent="." instance=ExtResource( 9 )]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1025.0
+margin_top = -591.0
+margin_right = -1.0
+margin_bottom = 9.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 10 )]
+visible = false
+margin_left = -1024.5
+margin_top = -576.0
+margin_right = 1024.5
+margin_bottom = 576.0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.990741, 0.135767, 0, -0.135767, -0.990741, 0, 42, -232 )
+visible = false
+light_color = Color( 0.992157, 0.854902, 0.709804, 1 )
+shadow_enabled = true
+
+[node name="SunRiseTimer" type="Timer" parent="."]
+wait_time = 150.0
+one_shot = true
+autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="timeout" from="SunRiseTimer" to="." method="_on_SunRiseTimer_timeout"]

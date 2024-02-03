@@ -1,0 +1,182 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/Scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/GUI/button.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Scenes/SettingsMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Scenes/CreditsMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Music/Kevin MacLeod/Equatorial Complex/Equatorial Complex.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Scenes/HelpMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Fonts/SquadaOne/SquadaOne-Regular.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=8]
+size = 96
+font_data = ExtResource( 8 )
+
+[sub_resource type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+font_data = ExtResource( 8 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( -507, 190 )
+script = ExtResource( 2 )
+
+[node name="NameLabel" type="Label" parent="."]
+anchor_left = 0.519
+anchor_right = 0.519
+margin_left = -381.954
+margin_top = 24.0
+margin_right = 379.046
+margin_bottom = 126.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 8 )
+text = "Towards The Sunrise"
+align = 1
+
+[node name="Buttons" type="Control" parent="."]
+anchor_left = 0.507
+anchor_top = 0.513
+anchor_right = 0.507
+anchor_bottom = 0.513
+margin_left = -29.562
+margin_top = -8.98401
+margin_right = 10.438
+margin_bottom = 31.016
+rect_scale = Vector2( 2, 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -82.0
+margin_top = -135.5
+margin_right = 82.0
+margin_bottom = 135.5
+alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+margin_right = 164.0
+margin_bottom = 51.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/StartButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.3333
+margin_top = 6.33334
+margin_right = 59.6667
+margin_bottom = 45.3333
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Start"
+align = 1
+valign = 1
+
+[node name="SettingsButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+margin_top = 55.0
+margin_right = 164.0
+margin_bottom = 106.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/SettingsButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.3333
+margin_top = 6.33334
+margin_right = 59.6667
+margin_bottom = 45.3333
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Settings"
+align = 1
+valign = 1
+
+[node name="HelpButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+margin_top = 110.0
+margin_right = 164.0
+margin_bottom = 161.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/HelpButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.3333
+margin_top = 6.33334
+margin_right = 59.6667
+margin_bottom = 45.3333
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Help"
+align = 1
+valign = 1
+
+[node name="CreditsButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+margin_top = 165.0
+margin_right = 164.0
+margin_bottom = 216.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/CreditsButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.3333
+margin_top = 6.33334
+margin_right = 59.6667
+margin_bottom = 45.3333
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Credits"
+align = 1
+valign = 1
+
+[node name="ExitButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+margin_top = 220.0
+margin_right = 164.0
+margin_bottom = 271.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Text" type="Label" parent="Buttons/VBoxContainer/ExitButton"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.3333
+margin_top = 6.33334
+margin_right = 59.6667
+margin_bottom = 45.3333
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Exit"
+align = 1
+valign = 1
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = -1024.5
+margin_top = -576.0
+margin_right = 1024.5
+margin_bottom = 576.0
+
+[node name="HelpMenu" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="CreditsMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="pressed" from="Buttons/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]

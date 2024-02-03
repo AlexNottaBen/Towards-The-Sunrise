@@ -1,0 +1,9 @@
+The model provided in this folder are released under the Creative Commons Zero (CC0) License.
+
+You are free to use the model for any purpose, including commercial, without giving attribution or providing any credit.
+
+By using the model, you agree that the author (if applicable) and contributors are not liable for any issues that may arise from the use of the model.
+
+License Link: https://creativecommons.org/publicdomain/zero/1.0/
+
+Date: 03.02.2024
