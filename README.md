@@ -2,7 +2,7 @@
 
 ![Cover](./Pictures/Cover.png)
 
-Towards the Sunrise is a game where a player...
+Towards the Sunrise is draws inspiration from arcade games like ["Race the Sun (2013)"](https://en.wikipedia.org/wiki/Race_the_Sun_(video_game)), emphasizing high scores, brief gaming sessions, and an infusion of pure enjoyment combined with exhilarating tension. The premise is straightforward: avoid collisions and keep soaring!
 
 ### [Get it in itch.io](https://alexnottaben.itch.io/towards-the-sunrise)
 
@@ -35,18 +35,18 @@ Follow [this link](http://docs.godotengine.org/en/latest/learning/workflow/expor
 - Alexander Serhiienko (alias AlexNottaBen) (https://github.com/AlexNottaBen/)
 
 ### 3D Models
-- Hand Glider by Vincent Decc (https://sketchfab.com/VincentDecc)
-- Lowpoly Mushrooms by Janosch (https://sketchfab.com/JanoschABR)
-- Light Test 4 - Sunrise by Tycho Magnetic Anomaly (Leave Mr. Camera Alone) (https://sketchfab.com/Tycho_Magnetic_Anomaly)
+- Hand Glider by Vincent Decc (https://sketchfab.com/VincentDecc),
+- Lowpoly Mushrooms by Janosch (https://sketchfab.com/JanoschABR),
+- Light Test 4 - Sunrise by Tycho Magnetic Anomaly (Leave Mr. Camera Alone) (https://sketchfab.com/Tycho_Magnetic_Anomaly):
     - License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
 ### Sprites and Particles
-- Particle Pack by Kenney (https://www.kenney.nl/assets/particle-pack)
+- Particle Pack by Kenney (https://www.kenney.nl/assets/particle-pack),
     - License: CC-0 (https://creativecommons.org/share-your-work/public-domain/cc0/)
 
 ### Music
-- "Equatorial Complex " Kevin MacLeod (incompetech.com)
-- "The Lift " Kevin MacLeod (incompetech.com)
+- "Equatorial Complex " Kevin MacLeod (incompetech.com),
+- "The Lift " Kevin MacLeod (incompetech.com):
     - License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
 ### Sound Effects
@@ -58,8 +58,8 @@ Follow [this link](http://docs.godotengine.org/en/latest/learning/workflow/expor
     - License: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
 
 ### Fonts
-- Squada One by Admix Designs (http://www.admixdesigns.com/)
-- Open Sans by The Open Sans Project Authors (https://github.com/googlefonts/opensans)
+- Squada One by Admix Designs (http://www.admixdesigns.com/),
+- Open Sans by The Open Sans Project Authors (https://github.com/googlefonts/opensans):
     - License: SIL Open Font License, Version 1.1 (https://opensource.org/license/ofl-1-1/)
 
 ### Open Source Frameworks:
