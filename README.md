@@ -2,7 +2,7 @@
 
 ![Cover](./Pictures/Cover.png)
 
-Towards the Sunrise is draws inspiration from arcade games like ["Race the Sun (2013)"](https://en.wikipedia.org/wiki/Race_the_Sun_(video_game)), emphasizing high scores, brief gaming sessions, and an infusion of pure enjoyment combined with exhilarating tension. The premise is straightforward: avoid collisions and keep soaring!
+Towards the Sunrise draws inspiration from arcade games like ["Race the Sun (2013)"](https://en.wikipedia.org/wiki/Race_the_Sun_(video_game)), emphasizing high scores, brief gaming sessions, and an infusion of pure enjoyment combined with exhilarating tension. The premise is straightforward: avoid collisions and keep soaring!
 
 ### [Get it in itch.io](https://alexnottaben.itch.io/towards-the-sunrise)
 
